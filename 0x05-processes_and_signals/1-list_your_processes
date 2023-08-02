@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-#print all current running processes
-ps aux -H u
