@@ -38,11 +38,11 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 listen thelaura
-        bind :80
+        bind :443
         mode http
         balance roundrobin
-        server 652-web-01 34.203.75.126:80 check
-        server 652-web-02 18.207.233.116:80 check
+        server 652-web-01 34.203.75.126:443 check
+        server 652-web-02 18.207.233.116:443 check
 
 frontend www-http
         bind :80
@@ -56,5 +56,5 @@ frontend www-https
 
 backend web-backend
         redirect scheme https if !{ ssl_fc }
-      server 652-web-01 34.203.75.126:80 check
-        server 652-web-02 18.207.233.116:80 check
+      server 652-web-01 34.203.75.126:443 check
+        server 652-web-02 18.207.233.116:443 check
